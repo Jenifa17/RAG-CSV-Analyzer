@@ -1,4 +1,4 @@
-# 🤖 Health Checkup RAG Data Assistant
+# 🤖  RAG Data Assistant
 
 An AI-powered Data Assistant that lets you 
 chat with your own CSV dataset using 
