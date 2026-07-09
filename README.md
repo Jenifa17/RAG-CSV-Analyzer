@@ -1,4 +1,4 @@
-# 🤖 AI RAG Data Assistant
+# 🤖 RAG CSV Analyzer
 
 An AI-powered Retrieval-Augmented Generation (RAG) application that allows users to interact with any CSV files using natural language queries. The application converts user questions into SQL queries, retrieves relevant information from a PostgreSQL database, and generates accurate AI-powered responses.
 
@@ -41,7 +41,7 @@ An AI-powered Retrieval-Augmented Generation (RAG) application that allows users
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Jenifa17/health_checkup-RAG-Project.git
+git clone https://github.com/Jenifa17/RAG-CSV-Analyzer.git
 ```
 
 ### 2. Install dependencies
