@@ -1,18 +1,19 @@
-# 🤖 RAG CSV Analyzer
+# 🤖  RAG Data Assistant
 
-An AI-powered Retrieval-Augmented Generation (RAG) application that allows users to interact with any CSV files using natural language queries. The application converts user questions into SQL queries, retrieves relevant information from a PostgreSQL database, and generates accurate AI-powered responses.
+An AI-powered Retrieval-Augmented Generation (RAG) application that allows users to interact with any CSV dataset using natural language queries. The application converts CSV data into vector embeddings, stores them in PostgreSQL with pgvector, and generates accurate AI-powered responses using semantic search.
 
 ---
 
 ## 🚀 Features
 
-- 📂 Upload and analyze CSV datasets
-- 🗄️ Store data in PostgreSQL
+- 📂 Upload and analyze any CSV dataset
+- 🧠 Convert text data into vector embeddings
+- 🗄️ Store embeddings in PostgreSQL + pgvector
+- 🔍 Semantic similarity search on your data
 - 🤖 Ask questions in natural language
-- 🔍 AI converts questions into SQL queries
-- 📊 Retrieve relevant information from the database
-- 💬 Generate structured AI-powered responses
+- 💬 Get structured AI-powered responses
 - 🌐 Interactive Streamlit web interface
+- 💬 Chat history support
 
 ---
 
@@ -20,7 +21,8 @@ An AI-powered Retrieval-Augmented Generation (RAG) application that allows users
 
 - Python
 - Streamlit
-- PostgreSQL
+- PostgreSQL + pgvector
+- Sentence Transformers (all-MiniLM-L6-v2)
 - SQLAlchemy
 - Pandas
 - OpenRouter LLM API
@@ -41,34 +43,26 @@ An AI-powered Retrieval-Augmented Generation (RAG) application that allows users
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Jenifa17/RAG-CSV-Analyzer.git
+git clone https://github.com/Jenifa17/health_checkup-RAG-Project.git
 ```
 
 ### 2. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install streamlit sqlalchemy psycopg2-binary sentence-transformers openai python-dotenv pandas
 ```
 
 ### 3. Create the environment file
 
-Copy:
-
-```
-.env.example
-```
-
-to
-
-```
-.env
-```
-
-and add your credentials:
+Copy `.env.example` to `.env` and add your credentials:
 
 ```env
-OPENROUTER_API_KEY=your_api_key
-DATABASE_URL=your_database_url
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=your_database_name
+API_KEY=your_openrouter_api_key
 ```
 
 ### 4. Run the application
@@ -86,24 +80,37 @@ streamlit run app.py
 > Who are high-risk patients for heart disease?
 
 **Output:**
-
-The application retrieves relevant patient records from PostgreSQL and generates structured AI insights using the OpenRouter LLM.
-
----
-
-## 📸 Application Screenshots
+## 📸 Screenshots
 
 ### 1️⃣ CSV Upload
 
-![CSV Upload](images/upload_page.png)
 
-### 2️⃣ Dataset Preview
+![CSV Upload](Screenshot%202026-07-09%20213226.png)
 
-![Dataset Preview](images/dataset_preview.png)
 
-### 3️⃣ AI Generated Response
 
-![AI Response](images/ai_response.png)
+### 2️⃣ Dataset Preview  
+
+
+![Dataset Preview](Screenshot%202026-07-09%20213449.png)
+
+
+
+### 3️⃣ AI Response
+
+
+![AI Response](Screenshot%202026-07-09%20213944.png)
+
+**Summary:** Patients with heart disease tend to be older males (65+) with high BMI and smoking histories.
+
+**Key Findings:**
+- 10 patients identified with heart disease
+- 7 males, 3 females
+- Age range: 60-79 years
+- 6 out of 10 had no exercise habit
+- 4 out of 10 had smoking history
+
+**Conclusion:** Older males with sedentary lifestyle and smoking history are at highest risk.
 
 ---
 
@@ -114,54 +121,54 @@ health_checkup-RAG-Project/
 │── app.py
 │── database.py
 │── rag.py
-│── requirements.txt
+│── .env example
 │── README.md
-│── .env.example
-│── images/
-│    ├── upload_page.png
-│    ├── dataset_preview.png
-│    └── ai_response.png
 ```
 
 ---
 
-## 🔄 Project Workflow
+## 🔄 How RAG Works
 
 ```
 CSV Dataset
       │
       ▼
-PostgreSQL Database
+Text Conversion (each row → string)
       │
       ▼
-Natural Language Question
+Vector Embeddings (Sentence Transformers)
       │
       ▼
-RAG Engine
+Store in PostgreSQL + pgvector
       │
       ▼
-OpenRouter LLM
+User asks a Natural Language Question
       │
       ▼
-Generated SQL Query
+Question → Vector Embedding
       │
       ▼
-Retrieve Relevant Data
+Semantic Similarity Search (pgvector)
       │
       ▼
-AI Generated Answer
+Top 5 Relevant Rows retrieved as Context
+      │
+      ▼
+LLM (via OpenRouter API)
+      │
+      ▼
+Structured AI Answer ✅
 ```
 
 ---
 
 ## 🎯 Future Enhancements
 
-- Support multiple datasets
+- Support multiple datasets simultaneously
 - Data visualization dashboards
-- Chat history
 - User authentication
 - Export AI-generated reports
-- Cloud deployment
+- Cloud deployment (Streamlit Cloud)
 
 ---
 
@@ -171,4 +178,4 @@ AI Generated Answer
 
 Electronics and Communication Engineering (ECE)
 
-Python Developer | AI & Data Enthusiast
+Python Developer | AI & ML Enthusiast
