@@ -1,4 +1,4 @@
-# 🤖  RAG Data Assistant
+# 🤖  RAG CSV Analyzer
 
 An AI-powered Retrieval-Augmented Generation (RAG) application that allows users to interact with any CSV dataset using natural language queries. The application converts CSV data into vector embeddings, stores them in PostgreSQL with pgvector, and generates accurate AI-powered responses using semantic search.
 
