@@ -99,18 +99,21 @@ streamlit run app.py
 ### 3️⃣ AI Response
 
 
-![AI Response](Screenshot%202026-07-09%20213944.png)
+![AI Response](Screenshot%202026-07-09%20213229.png)
 
-**Summary:** Patients with heart disease tend to be older males (65+) with high BMI and smoking histories.
+**Summary:**
+
+The highest BMI in the dataset is **46.11**, belonging to an individual in the **60–64** age group.
 
 **Key Findings:**
-- 10 patients identified with heart disease
-- 7 males, 3 females
-- Age range: 60-79 years
-- 6 out of 10 had no exercise habit
-- 4 out of 10 had smoking history
 
-**Conclusion:** Older males with sedentary lifestyle and smoking history are at highest risk.
+- Maximum BMI: **46.11** (Obese Class III)
+- Age group: **60–64**
+- Next highest BMIs: **45.33** and **43.94**
+
+**Conclusion:**
+
+The **60–64** age group contains the individual with the highest BMI in the dataset.
 
 ---
 
