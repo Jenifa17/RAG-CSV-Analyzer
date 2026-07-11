@@ -92,10 +92,12 @@ streamlit run app.py
 
 **Summary:**
 The highest BMI in the dataset is **46.11**, belonging to an individual in the **60–64** age group.
+
 **Key Findings:**
 - Maximum BMI: **46.11** (Obese Class III)
 - Age group: **60–64**
 - Next highest BMIs: **45.33** and **43.94**
+
 **Conclusion:**
 The **60–64** age group contains the individual with the highest BMI in the dataset.
 
