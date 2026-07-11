@@ -76,43 +76,27 @@ streamlit run app.py
 ## 💡 Example Query
 
 **Question:**
-
-> Who are high-risk patients for heart disease?
+> which age group has highest BMI
 
 **Output:**
 ## 📸 Screenshots
 
 ### 1️⃣ CSV Upload
-
-
 ![CSV Upload](Screenshot%202026-07-09%20213226.png)
 
-
-
 ### 2️⃣ Dataset Preview  
-
-
 ![Dataset Preview](Screenshot%202026-07-09%20213449.png)
 
-
-
 ### 3️⃣ AI Response
-
-
-![AI Response](Screenshot%202026-07-09%20213229.png)
+![AI Response](Screenshot%202026-07-08%20213229.png)
 
 **Summary:**
-
 The highest BMI in the dataset is **46.11**, belonging to an individual in the **60–64** age group.
-
 **Key Findings:**
-
 - Maximum BMI: **46.11** (Obese Class III)
 - Age group: **60–64**
 - Next highest BMIs: **45.33** and **43.94**
-
 **Conclusion:**
-
 The **60–64** age group contains the individual with the highest BMI in the dataset.
 
 ---
